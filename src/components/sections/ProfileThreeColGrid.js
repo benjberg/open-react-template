@@ -16,7 +16,7 @@ const Cards = tw.div`flex flex-wrap flex-row justify-center sm:max-w-2xl lg:max-
 const Card = tw.div`mt-24 w-full sm:w-1/2 lg:w-1/3 flex flex-col items-center`
 const CardImage = styled.div`
   ${props => css`background-image: url("${props.imageSrc}");`}
-  ${tw`w-64 h-64 bg-contain bg-center rounded`}
+  ${tw`w-64 h-64 bg-cover bg-center rounded`}
 `
 const CardContent = styled.div`
   ${tw`flex flex-col items-center mt-6`}
@@ -36,30 +36,32 @@ export default ({
   description = "A distributed bunch of badasses making it happen",
   cards = [
     {
-      imageSrc: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
+      imageSrc: "https://i.ibb.co/92zCjKP/Kyle.jpg",
       position: "Founder",
       name: "Kyle Einheuser",
-      description: "Kyle is the man"
+      description: "Kyle comes from a marketing, sales, and operations background. Focusing on the consumer journey and the products that make those convert into repeat customers is his specialty. He was born and raised in Michigan. Favorite Video games: Tiger Woods PGA Tour 2008, Halo 3, and Call of Duty: Modern Warfare 3."
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
-      position: "Sr. Designer",
-      name: "Charlotte Hale",
+      imageSrc: "https://i.ibb.co/xSF1sZf/4.jpg",
+      position: "CMO",
+      name: "Helena Leathers",
+      description: "Helena is the CMO at Parlay and focuses on branding and marketing strategy. With over 6 years of experience in international business and entrepreneurship, she has targeted her skills towards a specialization in digital marketing and growth strategies across numerous sectors and industries."
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
-      position: "Jr. Designer",
-      name: "Silvester Wize",
+      imageSrc: "https://i.ibb.co/64mdGtB/Ben.jpg",
+      position: "CTO",
+      name: "Ben Berger",
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
-      position: "Lead Developer",
-      name: "Himali Turn",
+      imageSrc: "https://i.ibb.co/xYRHYkQ/Chen-2.jpg",
+      position: "Data Scientist",
+      name: "Gamemaster Chen",
+      description: " GM Chen is an Experienced Data scientist utilizing statistics, machine learning and deep learning models to research probability and betting ratios. GM Loves Python & R-studio  and has a huge passion for Neural Networks."
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1546820389-44d77e1f3b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=3.45&w=512&h=512&q=80",
-      position: "Sr. Developer",
-      name: "Troye Sivan",
+      imageSrc: "https://i.ibb.co/TRVnDZ2/Joe-1.jpg",
+      position: "Discord Manager",
+      name: "Joe Cox",
     },
     {
       imageSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=3.45&w=512&h=512&q=80",
