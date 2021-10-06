@@ -22,10 +22,7 @@ const AboutUs = () => {
         heading="We wanted to seamlessly merge the games we love with the excitement of wagers, bets and tournaments.
 
         "
-        // bold1="BETTING"
-        // heading2="AND"
-        // bold2="GAMING"
-        // heading3="TO THE MODERN AGE."
+        
         description='Bet on your own gaming skills to win real money. Parlay offers a new way to engage with your favorite games on PC or console. 
 
         '
