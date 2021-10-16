@@ -6,6 +6,7 @@ import ReactGA from 'react-ga';
 import "@material-tailwind/react/tailwind.css"
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
+import LayoutToMain from './layouts/LayoutToMain';
 import AuthLayout from "./layouts/AuthLayout"
 
 // Views 
@@ -48,16 +49,16 @@ const App = () => {
       children={() => (
         <Switch>
           <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-          <AppRoute exact path="/about" component={AboutUs} layout={LayoutDefault}/>
-          <AppRoute exact path="/contact" component={ContactUs} layout={LayoutDefault}/>
-          <AppRoute exact path="/login" component={Login} layout={LayoutDefault}/>
-          <AppRoute exact path="/register" component={SignUp} layout={LayoutDefault}/>
-          <AppRoute exact path="/tos" component={TermsOfService} layout={LayoutDefault}/>
-          <AppRoute exact path="/privacy" component={PrivacyPolicy} layout={LayoutDefault}/>
+          <AppRoute exact path="/about" component={AboutUs} layout={LayoutToMain}/>
+          <AppRoute exact path="/contact" component={ContactUs} layout={LayoutToMain}/>
+          <AppRoute exact path="/login" component={Login} layout={LayoutToMain}/>
+          <AppRoute exact path="/register" component={SignUp} layout={LayoutToMain}/>
+          <AppRoute exact path="/tos" component={TermsOfService} layout={LayoutToMain}/>
+          <AppRoute exact path="/blog" component={Blog3} layout={LayoutToMain}/>
+          <AppRoute exact path="/privacy" component={PrivacyPolicy} layout={LayoutToMain}/>
           {/* auth routes */}
           <AppRoute exact path="/user" component={UserProfileView} layout={AuthLayout}/>
           <AppRoute exact path="/user/data" component={UserInfo} layout={AuthLayout}/>
-          <AppRoute exact path="/blog" component={Blog3} layout={AuthLayout}/>
           <AppRoute exact path="/blog/:id" component={Posts} layout={AuthLayout}/>
         </Switch>
       )} />

@@ -51,6 +51,7 @@ export default ({
       imageSrc: "https://i.ibb.co/64mdGtB/Ben.jpg",
       position: "CTO",
       name: "Ben Berger",
+      description: "Ben is a fullstack developer as well as a musician. Lover of tech, caffine and gaming. Favorite games include: Left 4 Dead, Diablo 2 and Streets of Rage "
     },
     {
       imageSrc: "https://i.ibb.co/xYRHYkQ/Chen-2.jpg",
@@ -62,11 +63,13 @@ export default ({
       imageSrc: "https://i.ibb.co/TRVnDZ2/Joe-1.jpg",
       position: "Discord Manager",
       name: "Joe Cox",
+      description: "Joe is one of the most fierce gamers. He's been a multiple time top player for many games over the years in the competitive scene. He also codes and has written bots & AI for various applications."
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=3.45&w=512&h=512&q=80",
-      position: "Quality Assurance",
-      name: "Holo Wo",
+      imageSrc: "https://i.ibb.co/nDJvrW6/Christian.jpg",
+      position: "Social Media Manager",
+      name: "Christian Vann Epps",
+      description: 'Christian is the Social Media Manager at Parlay. With a passion for storytelling and content creation, Christian is dedicated to telling Parlay\'s story digitally and is a sucker for "likes and retweets."'
     },
   ]
 }) => {
