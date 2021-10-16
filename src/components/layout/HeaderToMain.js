@@ -68,8 +68,8 @@ const Header = ({
     closeMenu();
   }  
 
-  const HighlightSignUp = (e) => {
-     document.getElementById('newsletter').focus();
+  const bringToHome = (e) => {
+    window.location.href='http://localhost:3000/'; 
   }
 
   const classes = classNames(
@@ -128,7 +128,7 @@ const Header = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <button  className="button button-primary button-wide-mobile button-sm" onClick={HighlightSignUp}>Sign up</button>
+                        <button  className="button button-primary button-wide-mobile button-sm" onClick={bringToHome}>Sign up</button>
                       </li>
                     </ul>}
                 </div>
