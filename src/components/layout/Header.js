@@ -69,9 +69,9 @@ const Header = ({
   }  
 
   const HighlightSignUp = (e) => {
+       
      document.getElementById('newsletter').focus();
   }
-
   const classes = classNames(
     'site-header',
     bottomOuterDivider && 'has-bottom-divider',
@@ -89,8 +89,8 @@ const Header = ({
             'site-header-inner',
             bottomDivider && 'has-bottom-divider'
           )}>
-            <Link tw="no-underline" to='/' >
-            <span tw="hidden md:flex text-4xl font-robotoCon font-hairline text-parlayPink">PARLAY</span></Link> 
+            <Link tw="no-underline hidden md:flex " to='/' >
+            <span tw="md:flex text-4xl font-robotoCon font-hairline text-parlayPink">PARLAY</span></Link> 
           <Logo />
           {!hideNav &&
             <>
