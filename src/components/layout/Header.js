@@ -119,8 +119,8 @@ const Header = ({
                     )}>
                     <li className="links">
                       <Link to="/blog" onClick={closeMenu}>Blog</Link>
-                      <Link to="/about" onClick={closeMenu}>About Us</Link>
-                      <Link to="/contact" onClick={closeMenu}>Contact Us</Link>
+                      <Link to="/about" onClick={closeMenu}>About</Link>
+                      <Link to="/contact" onClick={closeMenu}>Contact</Link>
                     </li>
                   </ul>
                   {!hideSignin &&
@@ -128,7 +128,7 @@ const Header = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <button  className="button button-primary button-wide-mobile button-sm" onClick={HighlightSignUp}>Sign up</button>
+                        <button  className="button button-primary button-wide-mobile button-sm mx-auto" onClick={HighlightSignUp}>Sign up</button>
                       </li>
                     </ul>}
                 </div>
