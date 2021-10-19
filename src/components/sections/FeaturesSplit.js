@@ -83,10 +83,11 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/antiSmurfChen.png')}
+                  src={require('./../../assets/images/chenSmurf.png')}
                   alt="Features split 01"
                   width={528}
-                  height={396} />
+                  height={396}
+                  tw='rounded' />
               </div>
             </div>
 
@@ -109,10 +110,11 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/time2.jpg')}
+                  src={require('./../../assets/images/ui.png')}
                   alt="Features split 02"
                   width={528}
-                  height={396} />
+                  height={396} 
+                  tw='rounded'/>
               </div>
             </div>
 
@@ -135,10 +137,11 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/1.png')}
+                  src={require('./../../assets/images/comingSoon.png')}
                   alt="Features split 03"
                   width={528}
-                  height={396} />
+                  height={396}
+                  tw='rounded' />
               </div>
             </div>
 
