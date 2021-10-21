@@ -69,7 +69,7 @@ const Header = ({
   }  
 
   const bringToHome = (e) => {
-    window.location.href='http://localhost:3000/'; 
+    window.location.href='https://www.parlay.cash/'; 
   }
 
   const classes = classNames(
