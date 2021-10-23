@@ -71,7 +71,7 @@ const FeaturesTiles = ({
                       src={require('../../assets/images/userIcon.png')}
                       alt="Features tile icon 02"
                       width={100}
-                      height={100}  tw="rounded-full"/>
+                      height={100}  tw="rounded-full items-start"/>
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
@@ -94,7 +94,7 @@ const FeaturesTiles = ({
                       alt="Features tile icon 01"
                       width={100}
                       height={100} 
-                      tw="rounded-full" />
+                      tw="rounded-full items-start" />
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
@@ -117,7 +117,7 @@ const FeaturesTiles = ({
                       alt="Features tile icon 03"
                       width={100}
                       height={100}
-                      tw="rounded-full" />
+                      tw="rounded-full items-start" />
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
