@@ -68,7 +68,7 @@ export default ({
     {
       imageSrc: "https://i.ibb.co/nDJvrW6/Christian.jpg",
       position: "Social Media Manager",
-      name: "Christian Vann Epps",
+      name: "Christian Van Epps",
       description: 'Christian is the Social Media Manager at Parlay. With a passion for storytelling and content creation, Christian is dedicated to telling Parlay\'s story digitally and is a sucker for "likes and retweets."'
     },
   ]
