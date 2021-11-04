@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import Input from '../elements/Input';
 import axios from 'axios';
+import dotenv from 'dotenv';
 
 const propTypes = {
   ...SectionProps.types,
@@ -47,7 +48,7 @@ const Cta = ({
     }
     const handleSubmit = (e) =>{
       
-      axios.post(process.env.REACT_APP_EMAIL_API, {email}).then(res=> {
+      axios.post(process.env.REACT_APP_EMAIL_API, {email: email}).then(res=> {
         console.log('ressss',res)
         setEmail('')
         alert(res.data.msg)  }
@@ -73,7 +74,7 @@ const Cta = ({
           <div className="cta-action">
             <Input id="newsletter" type="email" label="Subscribe" labelHidden  placeholder="Your best email" onChange={handleChange} value={email}>
             </Input>
-             <input type='submit' onClick={handleSubmit}/>
+             <input type='submit' onClick={handleSubmit}></input>
           </div>
         </div>
       </div>

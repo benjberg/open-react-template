@@ -63,7 +63,7 @@ function CarouselComp() {
         </div>
       </div>
     </Container>
-  );
+);
 }
 
 export default CarouselComp;
