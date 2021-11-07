@@ -7,9 +7,9 @@ import MainFeature1 from "../components/sections/TwoColWithButton.js";
 import Features from "../components/sections/ThreeColSimple.js";
 import TeamCardGrid from "../components/sections/ProfileThreeColGrid.js";
 
-import SupportIconImage from "../assets/images/support-icon.svg";
-import ShieldIconImage from "../assets/images/shield-icon.svg";
-import CustomerLoveIconImage from "../assets/images/simple-icon.svg";
+import SupportIconImage from "../assets/images/SUPPORT.png";
+import ShieldIconImage from "../assets/images/Teams.png";
+import CustomerLoveIconImage from "../assets/images/customerSat.png";
 
 const Subheading = tw.span`uppercase tracking-wider text-sm text-base font-robotoCon font-light text-parlayPink`;
 const AboutUs = () => {
@@ -26,18 +26,18 @@ const AboutUs = () => {
         description='Bet on your own gaming skills to win real money. Parlay offers a new way to engage with your favorite games on PC or console. 
 
         '
-        imageSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
+        imageSrc="https://i.ibb.co/MZGqvMX/ABOUT-US.png"
       />
       <MainFeature1
         subheading={<Subheading>Our Vision</Subheading>}
         heading="We aim to disrupt the design space."
         description='At Parlay, our team works to bring together two key things: GAMES that are fun, and require skill, and BETS that are fair, easy to create, change, and cash out. 
 
-        By combining collaboration with adrenaline, fun with benefits, and something else?
+        We combine collaboration, adrenaline, fun and benefits. Get started now!
         
         '
         primaryButtonText="Contact Us"
-        imageSrc="https://images.unsplash.com/3/doctype-hi-res.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
+        imageSrc="https://i.ibb.co/fQ24ZMm/ABOUT-US-2.png"
         textOnLeft={false}
       />
       <Features

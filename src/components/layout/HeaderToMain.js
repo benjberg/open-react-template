@@ -68,10 +68,10 @@ const Header = ({
     closeMenu();
   }  
 
-  const HighlightSignUp = (e) => {
-       
-     document.getElementById('newsletter').focus();
+  const bringToHome = (e) => {
+    window.location.href='https://www.parlay.cash/'; 
   }
+
   const classes = classNames(
     'site-header',
     bottomOuterDivider && 'has-bottom-divider',
@@ -88,7 +88,7 @@ const Header = ({
           classNames(
             'site-header-inner',
             bottomDivider && 'has-bottom-divider'
-          )}>
+          )}> 
           <Logo />
           {!hideNav &&
             <>
@@ -126,7 +126,7 @@ const Header = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <button  className="button button-primary button-wide-mobile button-sm mx-auto" onClick={HighlightSignUp}>Sign up</button>
+                        <button  className="button button-primary button-wide-mobile button-sm mx-auto" onClick={bringToHome}>Sign up</button>
                       </li>
                     </ul>}
                 </div>

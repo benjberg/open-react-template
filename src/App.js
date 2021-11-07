@@ -6,6 +6,7 @@ import ReactGA from "react-ga";
 import "@material-tailwind/react/tailwind.css";
 // Layouts
 import LayoutDefault from "./layouts/LayoutDefault";
+import LayoutToMain from "./layouts/LayoutToMain";
 import AuthLayout from "./layouts/AuthLayout";
 
 // Views
@@ -52,43 +53,43 @@ const App = () => {
             exact
             path="/about"
             component={AboutUs}
-            layout={LayoutDefault}
+            layout={LayoutToMain}
           />
           <AppRoute
             exact
             path="/contact"
             component={ContactUs}
-            layout={LayoutDefault}
+            layout={LayoutToMain}
           />
           <AppRoute
             exact
             path="/login"
             component={Login}
-            layout={LayoutDefault}
+            layout={LayoutToMain}
           />
           <AppRoute
             exact
             path="/register"
             component={SignUp}
-            layout={LayoutDefault}
+            layout={LayoutToMain}
           />
           <AppRoute
             exact
             path="/tos"
             component={TermsOfService}
-            layout={LayoutDefault}
+            layout={LayoutToMain}
+          />
+          <AppRoute
+            exact
+            path="/blog"
+            component={Blog3}
+            layout={LayoutToMain}
           />
           <AppRoute
             exact
             path="/privacy"
             component={PrivacyPolicy}
-            layout={LayoutDefault}
-          />
-          <AppRoute
-            exact
-            path="/boy/valorant"
-            component={BetPage}
-            layout={LayoutDefault}
+            layout={LayoutToMain}
           />
           {/* auth routes */}
           <AppRoute
@@ -103,7 +104,6 @@ const App = () => {
             component={UserInfo}
             layout={AuthLayout}
           />
-          <AppRoute exact path="/blog" component={Blog3} layout={AuthLayout} />
           <AppRoute
             exact
             path="/blog/:id"
