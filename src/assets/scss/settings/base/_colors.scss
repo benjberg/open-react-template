@@ -77,12 +77,12 @@ $icon--color: (
   // accordion icon
   social-inverse: null,
   // social icons
-  social-hover-inverse: null // social icons (:hover),,,,,,,,
+  social-hover-inverse: null // social icons (:hover),,,,,,,,,
 );
 
 // Misc elements: background color
 $bg--color: (
-  body: get-color(dark, 1),
+  body: get-color(dark, 2),
   body-shadow: 0 20px 48px rgba(get-color(dark, 1), 0.8),
   // body shadow when a boxed layout is used (set to null if don't want a shadow)
   body-outer: lighten(get-color(dark, 1), 2%),

@@ -1,17 +1,13 @@
-import React from 'react';
-import BetSlip from '../components/sections/BetSlip.js';
+import React from "react";
 
-import CarouselComp from '../components/sections/CarouselComp.js';
-import TabsRender from '../components/sections/TabsRender.js';
-
+import CarouselComp from "../components/sections/CarouselComp.js";
+import TabsRender from "../components/sections/TabsRender.js";
 
 const UserProfileView = () => (
-
-       <>
-        <CarouselComp/>
-        <TabsRender/>
-        <BetSlip/>
-      </>
-)
+  <>
+    <CarouselComp />
+    <TabsRender />
+  </>
+);
 
 export default UserProfileView;
