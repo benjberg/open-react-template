@@ -1,38 +1,56 @@
-import React from "react"
-import {PrimaryButton} from '../elements/Buttons'
-import tw from 'twin.macro'
+import React from "react";
 
-
-function BetSlip({
-  className = "yoooooooooooo",
-  image = "",
-  title = "eeeeeeeeeeeeeeeeeeeeeeeeee",
-  text = "dasdasdasdasd",
-  buttonText = 'place bet',
-  buttonLink = "ffffffeeeee",
-  html = null,
-  ...newProps
-}) {
-  let finalClass = `${className} w-72 max-w-full border border-gray-300 rounded-sm bg-white`
+function BetSlip() {
   return (
-    <div className={finalClass} tw="w-72 max-w-full border border-gray-300 rounded-sm bg-white">
-      {image && (
-        <div tw="w-full h-48">
-          <img src={image} tw="w-full h-full object-cover" />
-        </div>
-      )}
-      <div tw="p-6">
-        {title && <h5 tw="text-lg font-medium">{title}</h5>}
-        {text && <p className={`${title }`} tw='mt-2'>{text}</p>}
-        {html}
-        {buttonText && (
-          <div tw="mt-4 flex">
-            <PrimaryButton link={buttonLink}>{buttonText}</PrimaryButton>
-          </div>
-        )}
+    <main tw="flex flex-col bg-gray-900 rounded-md w-full mx-2">
+      <div tw="ml-5 py-2">BET SLIP</div>
+
+      <div tw="flex justify-center border-t-2 border-b-2 border-white py-2">
+        <button tw="flex justify-center w-1/2">single</button>
+        <button tw="flex justify-center w-1/2">parlay</button>
       </div>
-    </div>
-  )
+      <section tw="border-2 border-white m-2 rounded-md flex">
+        <div tw="flex flex-col w-1/2">
+          <button>hello</button>
+          <a href="www.google.com">BET MAX</a>
+        </div>
+        <div>
+          <div>
+            0.00<br></br>Potential return
+          </div>
+          <div>
+            0.00<br></br>WGR<br></br>($0.00 USD)
+          </div>
+        </div>
+      </section>
+      <section tw="flex flex-col">
+        <div tw="flex justify-between">
+          <div tw="px-2">Total Matches</div>
+          <div tw="px-2">0</div>
+        </div>
+        <div tw="flex justify-between">
+          <div tw="px-2">Total Stake</div>
+          <div tw="flex flex-col">
+            <div>25.00 WGR</div>
+            <div>($0.00 USD)</div>
+          </div>
+        </div>
+        <div tw="flex justify-between">
+          <div tw="px-2">Total Potential</div>
+          <div tw="px-2">0.00 WGR</div>
+        </div>
+        <div tw="flex justify-between">
+          <div tw="px-2">Return</div>
+          <div>($0.00 USD)</div>
+        </div>
+      </section>
+      <div tw="flex justify-center">
+        <button tw="bg-purple-900 p-2 rounded-md my-2">
+          Login To Place Bet
+        </button>
+      </div>
+    </main>
+  );
 }
 
 export default BetSlip;
