@@ -1,144 +1,134 @@
-import React from "react";
-import { Content2Xl } from "../../layouts/Layouts";
+import React, { useState } from "react";
 import Bets from "./Bets";
 import BetSlip from "./BetSlip";
+import BetStats from "./BetStats";
 import "react-tabs/style/react-tabs.css";
-import Val from "../../assets/images/valorant-logo.png";
-import Wz from "../../assets/images/COD2.jpg";
-import Fn from "../../assets/images/fn3.jpg";
-import Plot from "react-plotly.js";
-import CarouselComp from "./CarouselComp";
-import Carousel from "react-elastic-carousel";
+import GamesCarousel from "../sections/GamesCarousel";
+import VerticalCarousel from "./VerticalCarousel";
+import { config } from "react-spring";
+import { initial } from "lodash";
 
-const gameData = [
+let slides = [
   {
-    href: "fort",
-    src: Fn,
-    alt: "Fortnite logo",
+    key: 1,
+    content: "h",
   },
   {
-    href: "fort",
-    src: Wz,
-    alt: "WarZone logo",
+    key: 2,
+    content: "2",
   },
   {
-    href: "fort",
-    src: Val,
-    alt: "Valorant logo",
+    key: 3,
+    content: <Bets />,
   },
   {
-    href: "fort",
-    src: Fn,
-    alt: "Fortnite logo",
+    key: 4,
+    content: "3",
   },
   {
-    href: "fort",
-    src: Wz,
-    alt: "WarZone logo",
+    key: 5,
+    content: "4",
   },
   {
-    href: "fort",
-    src: Val,
-    alt: "Valorant logo",
+    key: 6,
+    content: "5",
+  },
+  {
+    key: 7,
+    content: "6",
+  },
+  {
+    key: 8,
+    content: "7",
   },
 ];
 
-const TabsRender = () => (
-  <Content2Xl>
-    <section tw="flex w-full">
-      <div tw="mx-10 bg-red-100">Bet On Yourself</div>
-      <div
-        tw="mx-10"
-        onClick={() => {
-          console.log("hello");
-        }}
-      ></div>
-      <div tw="mx-10">hello</div>
-      <div tw="mx-10">hello</div>
-      <div tw="mx-10">hello</div>
-    </section>
+let goToSlide = 0;
+let offsetRadius = 2;
+let showNavigation = false;
+let vcconfig = config.gentle;
 
-    <section
-      tw="flex flex-col bg-cover"
-      // style={{
-      //   backgroundImage: `url("https://images.unsplash.com/photo-1597299407241-638aa26e56c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1157&q=80")`,
-      // }}
-    >
-      <section tw="flex w-full">
-        <div tw="bg-gray-600 m-2 w-full rounded-lg">
-          <Carousel>
-            {gameData.map((gameArray) => (
-              <div tw="w-1/2 flex justify-center">
-                <a href="/boy/valorant">
-                  <img
-                    tw="hover:border-2 hover:border-cyan hover:border-solid hover:h-32 h-full duration-500"
-                    src={gameArray.src}
-                    alt={gameArray.alt}
-                  />
-                </a>
-              </div>
-            ))}
-          </Carousel>
-        </div>
-        <div tw="bg-gray-800 m-2 rounded-lg">
-          <Plot
-            data={[
-              {
-                x: [1, 2, 3],
-                y: [2, 6, 3],
-                type: "scatter",
-                mode: "lines+markers",
-                marker: { color: "purple" },
-              },
-            ]}
-            layout={{
-              autosize: false,
-              height: 200,
-              title: "History",
-              plot_bgcolor: "transparent",
-              paper_bgcolor: "transparent",
-              margin: {
-                l: 25,
+const initialTabSelection = {
+  selection: "tab1",
+};
 
-                r: 0,
+const TabsRender = () => {
+  //TabSelectionState
+  const tabOnClick = (e) => {
+    e.preventDefault();
+    let elem = document.getElementsByClassName("selected");
+    console.log(elem);
+    elem.classList.remove("selected");
 
-                b: 25,
+    document.getElementById(tabSelection.selection).classList.add("selected");
+  };
 
-                t: 40,
+  const [tabSelection, setTabSelection] = useState(initialTabSelection);
 
-                pad: 4,
-              },
-              xaxis: {
-                showgrid: false,
-                color: "#00FF00",
-              },
-              yaxis: {
-                showgrid: false,
-                showline: true,
-                color: "#00FF00",
-              },
-            }}
-          />
-        </div>
+  return (
+    <main tw="mb-20">
+      <section tw="flex justify-center">
+        <ul class="tabrow">
+          <li
+            class="selected"
+            id="tab1"
+            // onClick={(e) => {
+            //   setTabSelection({ selection: "tab1" });
+            //   tabOnClick(e);
+            // }}
+          >
+            <a href="#">Bet On Yourself</a>
+          </li>
+          <li id="tab2">
+            <a href="#">Classified</a>
+          </li>
+          <li id="tab3">
+            <a href="#">Classified</a>
+          </li>
+          <li id="tab4">
+            <a href="#">Classified</a>
+          </li>
+        </ul>
       </section>
-      <section tw="flex w-full h-96 overflow-hidden">
-        <div tw="flex w-1/2 m-2">
-          <Bets />
-        </div>
-        <div tw="flex w-1/2">
-          <div tw="bg-gray-600 m-2 flex flex-col w-1/2 rounded-lg">
-            <p>Play Match</p>
-            <p>
-              Lorem Ipsume iasdufgiusdfign isdnf dnf giunsdifn sdufngiusdn
-              figunsdiu fngiusdfn gsdfsdf
-            </p>
+
+      <section
+        tw="rounded-lg bg-gray-800"
+        // style={{
+        //   backgroundImage: `url("https://images.unsplash.com/photo-1597299407241-638aa26e56c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1157&q=80")`,
+        // }}
+      >
+        <section tw="flex w-full">
+          <div tw="flex bg-gray-600 m-2 w-1/2 rounded-lg overflow-hidden">
+            <GamesCarousel />
           </div>
-          <div tw="flex h-full w-1/2">
-            <BetSlip />
+          <div tw="flex bg-gray-900 m-2 w-1/2 rounded-lg overflow-hidden">
+            <BetStats />
           </div>
-        </div>
+        </section>
+        <section tw="flex w-full h-96 overflow-hidden p-2">
+          <div tw="flex w-1/2 m-2 p-10 flex overflow-hidden">
+            <VerticalCarousel
+              slides={slides}
+              offsetRadius={offsetRadius}
+              showNavigation={showNavigation}
+              animationConfig={vcconfig}
+            />
+          </div>
+          <div tw="flex w-1/2">
+            <div tw="bg-gray-600 flex flex-col w-1/2 rounded-lg">
+              <p>Play Match</p>
+              <p>
+                Lorem Ipsume iasdufgiusdfign isdnf dnf giunsdifn sdufngiusdn
+                figunsdiu fngiusdfn gsdfsdf
+              </p>
+            </div>
+            <div tw="flex h-full w-1/2">
+              <BetSlip />
+            </div>
+          </div>
+        </section>
       </section>
-    </section>
-  </Content2Xl>
-);
+    </main>
+  );
+};
 export default TabsRender;
