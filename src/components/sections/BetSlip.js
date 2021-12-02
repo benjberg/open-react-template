@@ -2,7 +2,7 @@ import React from "react";
 
 function BetSlip() {
   return (
-    <main tw="flex flex-col bg-gray-900 rounded-md w-full mx-2">
+    <main tw="flex flex-col bg-gray-900 rounded-sm w-full">
       <div tw="ml-5 py-2">BET SLIP</div>
 
       <div tw="flex justify-center border-t-2 border-b-2 border-white py-2">

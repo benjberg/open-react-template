@@ -5,19 +5,20 @@ import { withGesture } from "react-with-gesture";
 
 const SlideContainer = styled.div`
   position: absolute;
-  height: 70%;
+  height: 50%;
   top: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transform-origin: 50% 50%;
+  box-shadow: 0px 0px 15px black;
 `;
 
 const SlideCard = styled.div`
   position: relative;
-  max-width: 50%;
-  min-width: 30%;
-  width: 100vw;
+
+  overflow: hidden;
+  width: 100%;
   height: 100%;
   background: white;
   font-size: 35px;

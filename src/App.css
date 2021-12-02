@@ -80,12 +80,12 @@
 
 /* TabsStyle */
 
-.tabrow {
+/* .tabrow {
   text-align: center;
   list-style: none;
   padding: 0px 5px 0px 5px;
-  line-height: 24px;
-  height: 26px;
+  line-height: 50px;
+  height: 50px;
   overflow: hidden;
   font-size: 18px;
   font-family: verdana;
@@ -100,6 +100,7 @@
   background: -webkit-linear-gradient(top, #ececec 50%, #d1d1d1 100%);
   background: linear-gradient(top, #ececec 50%, #d1d1d1 100%);
   display: inline-block;
+  height: 100%;
   position: relative;
   z-index: 0;
   border-top-left-radius: 6px;
@@ -112,6 +113,7 @@
 .tabrow a {
   color: #555;
   text-decoration: none;
+  display: flex;
 }
 .tabrow li.selected {
   background: rgb(46, 56, 70);
@@ -130,7 +132,7 @@
 }
 .tabrow li:before,
 .tabrow li:after {
-  border: 1px solid rgb(58, 58, 58);
+  border: 1px solid rgb(10, 10, 10);
   position: absolute;
   bottom: -1px;
   width: 5px;
@@ -147,7 +149,7 @@
   right: -6px;
   border-bottom-left-radius: 6px;
   border-width: 0 0 1px 1px;
-  box-shadow: -2px 2px 0 #6d6d6d;
+  box-shadow: -2px 2px 0 #222222;
 }
 .tabrow li.selected:before {
   box-shadow: 2px 2px 0 rgba(31, 41, 55);
@@ -155,3 +157,4 @@
 .tabrow li.selected:after {
   box-shadow: -2px 2px 0 rgba(31, 41, 55);
 }
+ */

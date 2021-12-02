@@ -8,6 +8,7 @@ module.exports = {
         md: "16px",
         lg: "24px",
         xl: "48px",
+
         9: "2.35rem",
       },
       width: {
@@ -953,7 +954,7 @@ module.exports = {
       transitionDuration: ["responsive"],
     },
   },
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [require("tailwind-scrollbar-hide"), require("@tailwindcss/forms")],
 
   prefix: "",
   important: false,

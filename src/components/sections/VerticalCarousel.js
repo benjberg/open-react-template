@@ -6,9 +6,10 @@ import PropTypes from "prop-types";
 const Wrapper = styled.div`
   position: relative;
   display: flex;
+  flex-grow: 0;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: full;
 `;
 
 const NavigationButtons = styled.div`
@@ -17,7 +18,7 @@ const NavigationButtons = styled.div`
 
   height: 60px;
   margin: 0 auto;
-  width: 20%;
+  width: 10%;
   margin-top: 1rem;
   justify-content: space-between;
   z-index: 1000;
@@ -71,7 +72,7 @@ class VerticalCarousel extends React.Component {
 
   static defaultProps = {
     offsetRadius: 2,
-    animationConfig: { tension: 120, friction: 14 },
+    animationConfig: { tension: 90, friction: 104 },
   };
 
   modBySlidesLength = (index) => {

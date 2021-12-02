@@ -11,14 +11,13 @@ export default class GamesCarousel extends Component {
       <Carousel
         tw="bg-gray-900"
         plugins={[
-          "clickToChange",
           "centered",
-          "rtl",
+          "infinite",
           "arrows",
           {
             resolve: slidesToShowPlugin,
             options: {
-              numberOfSlides: 2,
+              numberOfSlides: 3,
             },
           },
         ]}

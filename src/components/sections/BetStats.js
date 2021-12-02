@@ -6,7 +6,7 @@ const BetStats = () => (
     data={[
       {
         x: [1, 2, 4, 6],
-        y: [2, 6, 3, 4, 6, 5],
+        y: [2, 60, 3, 4, 6, 5],
         type: "scatter",
         mode: "lines+markers",
         marker: { color: "purple" },
@@ -14,12 +14,12 @@ const BetStats = () => (
     ]}
     layout={{
       autosize: false,
-      height: 250,
-      title: "History",
+      width: 1000,
+      title: "Win Streak",
       plot_bgcolor: "transparent",
       paper_bgcolor: "transparent",
       margin: {
-        l: 25,
+        l: 50,
 
         r: 0,
 
@@ -27,16 +27,16 @@ const BetStats = () => (
 
         t: 40,
 
-        pad: 5,
+        pad: 0,
       },
       xaxis: {
         showgrid: false,
-        color: "#00FF00",
+        color: "#FFC0CB",
       },
       yaxis: {
         showgrid: false,
         showline: true,
-        color: "#00FF00",
+        color: "#FFC0CB",
       },
     }}
   />
