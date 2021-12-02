@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Container as ContainerBase } from "../layouts/Layouts.js";
 import tw from "twin.macro";
 import styled from "styled-components";
@@ -6,6 +6,8 @@ import {css} from "styled-components/macro"; //eslint-disable-line
 import illustration from "../assets/images/login-illustration.svg";
 import logo from "../assets/images/logo.png";
 import { ReactComponent as LoginIcon } from "feather-icons/dist/icons/log-in.svg";
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const Container = tw(ContainerBase)`min-h-screen bg-secondary-600 text-black font-medium flex justify-center bg-opacity-0 -m-8 mt-12`;
 const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;
@@ -32,17 +34,47 @@ const IllustrationImage = styled.div`
   ${tw`m-12 xl:m-16 w-full max-w-sm bg-contain bg-center bg-no-repeat`}
 `;
 
+
+
 const Login =  ({
-  logoLinkUrl = "#",
+  logoLinkUrl = "/",
   illustrationImageSrc = illustration,
   headingText = "Sign In To Parlay",
   submitButtonText = "Sign In",
   SubmitButtonIcon = LoginIcon,
   forgotPasswordUrl = "#",
   signupUrl = "/register",
-
-}) => (
   
+}) => {
+  const history = useHistory();
+  const [user, setUser] = useState({
+    email: "",
+    password: ""
+  })
+  const handleChange = e => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+  const onLoginSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post('http://localhost:4000/api/auth/login', {
+        email: user.email,
+        password: user.password,
+      })
+      .then((res) => {
+        
+        console.log("token", res)
+        localStorage.setItem('authorization', res.data.sfToken);
+        localStorage.setItem('pauthorization', res.data.token);
+        localStorage.setItem('id', res.data.Data);
+        history.push('/user');
+      })
+      .catch((err) => {
+        // setLoginError('Login Error: ' + err.response.data.error.message);
+      });
+  };
+  
+  return(
     <Container>
       <Content>
         <MainContainer>
@@ -52,12 +84,13 @@ const Login =  ({
           <MainContent>
             <Heading>{headingText}</Heading>
             <FormContainer>
-              <Form>
-                <Input type="email" placeholder="Email" />
-                <Input type="password" placeholder="Password" />
-                <SubmitButton type="submit">
+              <Form onSubmit={onLoginSubmit}>
+                <Input type="email" name='email' placeholder="Email"  onChange={handleChange} value={user.email} />
+                <Input type="password" placeholder="Password" name='password'  onChange={handleChange} value={user.password}/>
+                <SubmitButton type="submit"  >
                   <SubmitButtonIcon className="icon" />
                   <span className="text">{submitButtonText}</span>
+                  
                 </SubmitButton>
               </Form>
               <p tw="mt-6 text-xs  text-center">
@@ -79,6 +112,6 @@ const Login =  ({
         </IllustrationContainer>
       </Content>
     </Container>
-);
+  )};
 
 export default Login;

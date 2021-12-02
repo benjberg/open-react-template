@@ -69,6 +69,7 @@
     "postcss-safe-parser": "4.0.1",
     "react": "^16.13.1",
     "react-alert": "^7.0.3",
+    "react-alert-template-mui": "^1.0.7",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-apollo": "^3.1.5",
     "react-app-polyfill": "^1.0.6",

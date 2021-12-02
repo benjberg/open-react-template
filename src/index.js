@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from "react-router-dom";
 import { createBrowserHistory } from "history";
-
+import { positions, Provider } from "react-alert";
+import AlertMUITemplate from "react-alert-template-mui"
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
@@ -22,12 +23,16 @@ const apollo_client = new ApolloClient({
 });
 
 const history = createBrowserHistory();
-
+const options = {
+  position: positions.MIDDLE
+};
 ReactDOM.render(
   <Router history={history}>
+    <Provider template={AlertMUITemplate} {...options}>
     <ApolloProvider client={ apollo_client }>
       <App />
     </ApolloProvider>
+    </Provider>
   </Router>,
   document.getElementById('root')
 );
