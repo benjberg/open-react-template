@@ -2,39 +2,46 @@ import React, { useContext, useState } from "react";
 import { BetContext } from "../contexts/BetContext";
 import Carousel from "react-spring-3d-carousel";
 import { config } from "react-spring";
-import uuidv4 from "uuid";
 import Val from "../../assets/images/valorant-logo.png";
 import Wz from "../../assets/images/COD2.jpg";
 import Fn from "../../assets/images/fn3.jpg";
+import { useSelector, useDispatch } from "react-redux";
+import { nextgame, prevgame } from "../../utils/actions/GamesActions";
 
 const GamesCarousel = () => {
-  const { setGame } = useContext(BetContext);
-  const { game } = useContext(BetContext);
+  const currentgame = useSelector((state) => state.currentgame);
+  const dispatch = useDispatch();
 
   const games = [
     {
-      key: uuidv4(),
+      key: 1,
       content: <img src={Wz} />,
+      name: "Warzone",
     },
     {
-      key: uuidv4(),
+      key: 2,
       content: <img src={Val} />,
+      name: "Warzone",
     },
     {
-      key: uuidv4(),
+      key: 3,
       content: <img src={Fn} />,
+      name: "Warzone",
     },
     {
-      key: uuidv4(),
+      key: 4,
       content: <img src={Wz} />,
+      name: "Warzone",
     },
     {
-      key: uuidv4(),
+      key: 5,
       content: <img src={Val} />,
+      name: "Warzone",
     },
     {
-      key: uuidv4(),
+      key: 6,
       content: <img src={Fn} />,
+      name: "Warzone",
     },
   ];
 
@@ -43,16 +50,17 @@ const GamesCarousel = () => {
       <button
         tw="bg-purple-900 focus:outline-none px-2"
         onClick={() => {
-          setGame(game - 1);
+          dispatch(prevgame());
         }}
       >
         Select
       </button>
+      <div>counter{currentgame}</div>
 
       <div style={{ width: "90%", height: "200px", margin: "10px auto" }}>
         <Carousel
           slides={games}
-          goToSlide={game}
+          goToSlide={currentgame}
           offsetRadius={3}
           animationConfig={config.slow}
         />
@@ -60,8 +68,7 @@ const GamesCarousel = () => {
       <button
         tw="bg-purple-900 focus:outline-none px-2"
         onClick={() => {
-          setGame(game + 1);
-          console.log(game);
+          dispatch(nextgame());
         }}
       >
         select
