@@ -1,144 +1,122 @@
-import React from "react";
-import { Content2Xl } from "../../layouts/Layouts";
+import React, { useEffect, useState } from "react";
 import Bets from "./Bets";
 import BetSlip from "./BetSlip";
+import BetStats from "./BetStats";
 import "react-tabs/style/react-tabs.css";
-import Val from "../../assets/images/valorant-logo.png";
-import Wz from "../../assets/images/COD2.jpg";
-import Fn from "../../assets/images/fn3.jpg";
-import Plot from "react-plotly.js";
-import CarouselComp from "./CarouselComp";
-import Carousel from "react-elastic-carousel";
+import GamesCarousel from "../sections/GamesCarousel";
+import GCar from "./GCar";
+import VerifyUsername from "./VerifyUsername";
 
-const gameData = [
+const betData = [
   {
-    href: "fort",
-    src: Fn,
-    alt: "Fortnite logo",
+    bet: "HeadShots",
+    betdescription:
+      "1Some description of the bet, Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+    image:
+      "https://www.logolynx.com/images/logolynx/ba/ba4665954a08a496286f49d28b82eaf2.jpeg",
   },
   {
-    href: "fort",
-    src: Wz,
-    alt: "WarZone logo",
+    bet: "KillStreak",
+    betdescription:
+      "2Some description of the bet, Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+    image:
+      "https://image.freepik.com/free-vector/headshot-skull-logo-template_130779-56.jpg",
   },
   {
-    href: "fort",
-    src: Val,
-    alt: "Valorant logo",
+    bet: "Team Score",
+    betdescription:
+      "3Some description of the bet, Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+    image:
+      "https://images-platform.99static.com/flBrkJFYSVZVTvBTcIOgRlIeeRQ=/265x140:1385x1260/500x500/top/smart/99designs-contests-attachments/99/99597/attachment_99597950",
   },
   {
-    href: "fort",
-    src: Fn,
-    alt: "Fortnite logo",
+    bet: "HeadShots",
+    betdescription:
+      "4Some description of the bet, Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+    image:
+      "https://www.logolynx.com/images/logolynx/ba/ba4665954a08a496286f49d28b82eaf2.jpeg",
   },
   {
-    href: "fort",
-    src: Wz,
-    alt: "WarZone logo",
+    bet: "HeadShots",
+    betdescription:
+      "1Some description of the bet, Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+    image:
+      "https://www.logolynx.com/images/logolynx/ba/ba4665954a08a496286f49d28b82eaf2.jpeg",
   },
   {
-    href: "fort",
-    src: Val,
-    alt: "Valorant logo",
+    bet: "KillStreak",
+    betdescription:
+      "2Some description of the bet, Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+    image:
+      "https://image.freepik.com/free-vector/headshot-skull-logo-template_130779-56.jpg",
   },
 ];
 
-const TabsRender = () => (
-  <Content2Xl>
-    <section tw="flex w-full">
-      <div tw="mx-10 bg-red-100">Bet On Yourself</div>
-      <div
-        tw="mx-10"
-        onClick={() => {
-          console.log("hello");
-        }}
-      ></div>
-      <div tw="mx-10">hello</div>
-      <div tw="mx-10">hello</div>
-      <div tw="mx-10">hello</div>
-    </section>
-
-    <section
-      tw="flex flex-col bg-cover"
-      // style={{
-      //   backgroundImage: `url("https://images.unsplash.com/photo-1597299407241-638aa26e56c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1157&q=80")`,
-      // }}
-    >
-      <section tw="flex w-full">
-        <div tw="bg-gray-600 m-2 w-full rounded-lg">
-          <Carousel>
-            {gameData.map((gameArray) => (
-              <div tw="w-1/2 flex justify-center">
-                <a href="/boy/valorant">
-                  <img
-                    tw="hover:border-2 hover:border-cyan hover:border-solid hover:h-32 h-full duration-500"
-                    src={gameArray.src}
-                    alt={gameArray.alt}
-                  />
-                </a>
-              </div>
-            ))}
-          </Carousel>
+const TabsRender = () => {
+  const [verified, setVerified] = useState(false);
+  return (
+    <main tw="flex flex-col w-full mb-5">
+      <section className="shadow" tw="w-full bg-gray-900">
+        <section className="shadow">
+          <ul tw="flex w-full bg-gray-800 justify-between shadow-lg h-10">
+            <div
+              class="tabs"
+              tw="border-r-2 border-black border-solid flex flex-grow justify-center items-center hover:bg-purple-900"
+              href="#"
+            >
+              Bet On Yourself
+            </div>
+            <div
+              class="tabs"
+              tw="border-r-2 border-black border-solid flex flex-grow justify-center items-center hover:bg-purple-900"
+              href="#"
+            >
+              Classified
+            </div>
+            <div
+              class="tabs"
+              tw="border-r-2 border-black border-solid flex flex-grow justify-center items-center hover:bg-purple-900"
+              href="#"
+            >
+              Classified
+            </div>
+            <div
+              class="tabs"
+              tw="border-r-2 border-black border-solid flex flex-grow justify-center items-center hover:bg-purple-900"
+              href="#"
+            >
+              Classified
+            </div>
+            <div
+              class="tabs"
+              tw="flex flex-grow justify-center items-center hover:bg-purple-900"
+              href="#"
+            >
+              Classified
+            </div>
+          </ul>
+        </section>
+        <div className="shadow" tw="m-5 flex justify-center rounded-sm">
+          <GCar />
         </div>
-        <div tw="bg-gray-800 m-2 rounded-lg">
-          <Plot
-            data={[
-              {
-                x: [1, 2, 3],
-                y: [2, 6, 3],
-                type: "scatter",
-                mode: "lines+markers",
-                marker: { color: "purple" },
-              },
-            ]}
-            layout={{
-              autosize: false,
-              height: 200,
-              title: "History",
-              plot_bgcolor: "transparent",
-              paper_bgcolor: "transparent",
-              margin: {
-                l: 25,
 
-                r: 0,
-
-                b: 25,
-
-                t: 40,
-
-                pad: 4,
-              },
-              xaxis: {
-                showgrid: false,
-                color: "#00FF00",
-              },
-              yaxis: {
-                showgrid: false,
-                showline: true,
-                color: "#00FF00",
-              },
-            }}
-          />
+        <div tw="m-5 flex justify-center h-96">
+          {verified ? <Bets betData={betData} /> : <VerifyUsername />}
         </div>
-      </section>
-      <section tw="flex w-full h-96 overflow-hidden">
-        <div tw="flex w-1/2 m-2">
-          <Bets />
-        </div>
-        <div tw="flex w-1/2">
-          <div tw="bg-gray-600 m-2 flex flex-col w-1/2 rounded-lg">
-            <p>Play Match</p>
-            <p>
-              Lorem Ipsume iasdufgiusdfign isdnf dnf giunsdifn sdufngiusdn
-              figunsdiu fngiusdfn gsdfsdf
-            </p>
+        <section tw="flex w-full p-5 pt-0">
+          <div className="shadow" tw="flex bg-gray-900 rounded-sm w-3/4 mr-5">
+            <BetStats />
           </div>
-          <div tw="flex h-full w-1/2">
+
+          <div
+            className="shadow"
+            tw="flex justify-center w-1/4 h-full rounded-sm overflow-hidden"
+          >
             <BetSlip />
           </div>
-        </div>
+        </section>
       </section>
-    </section>
-  </Content2Xl>
-);
+    </main>
+  );
+};
 export default TabsRender;

@@ -1,52 +1,24 @@
 import React, { Component } from "react";
+import VerticalCarousel from "./VerticalCarousel";
+import { config } from "react-spring";
 
-const betData = [
-  {
-    bet: "HeadShots",
-    betdescription:
-      "Some description of the bet, Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-    image:
-      "https://www.logolynx.com/images/logolynx/ba/ba4665954a08a496286f49d28b82eaf2.jpeg",
-  },
-  {
-    bet: "KillStreak",
-    betdescription:
-      "Some description of the bet, Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-    image:
-      "https://image.freepik.com/free-vector/headshot-skull-logo-template_130779-56.jpg",
-  },
-  {
-    bet: "Team Score",
-    betdescription:
-      "Some description of the bet, Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-    image:
-      "https://images-platform.99static.com/flBrkJFYSVZVTvBTcIOgRlIeeRQ=/265x140:1385x1260/500x500/top/smart/99designs-contests-attachments/99/99597/attachment_99597950",
-  },
-  {
-    bet: "HeadShots",
-    betdescription:
-      "Some description of the bet, Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-    image:
-      "https://www.logolynx.com/images/logolynx/ba/ba4665954a08a496286f49d28b82eaf2.jpeg",
-  },
-];
+let goToSlide = 0;
+let offsetRadius = 8;
+let showNavigation = false;
+let vcconfig = config.slow;
 
-class Bets extends Component {
-  render() {
-    return (
-      <main tw="flex flex-col overflow-hidden h-full overflow-y-scroll scrollbar-hide rounded-lg">
-        {betData.map((betArray) => (
-          <section tw="flex justify-between bg-gray-600 border-2 border-gray-400 hover:border-cyan hover:border-solid h-40 duration-200 w-full">
-            <section tw="flex flex-col w-1/3">
-              <img
-                tw="h-full w-full"
-                src={betArray.image}
-                alt="Valorant logo"
-              />
-            </section>
-            <section tw="flex flex-col justify-between w-1/3 p-2 border-r-2 border-gray-500 overflow-hidden">
-              <div>{betArray.bet}</div>
-              <div>{betArray.betdescription}</div>
+const Bets = (props) => {
+  const BetsBuilder = (bets) => {
+    const arr = [];
+    bets.forEach((bet, index) => {
+      arr.push({
+        key: index,
+        content: (
+          <section tw="flex justify-between bg-gray-800 border-2 border-gray-900 h-full w-full">
+            <img tw="w-1/4" src={bet.image} alt="Valorant logo" />
+            <section tw="flex flex-col justify-between w-1/2 p-2 border-r-2 border-gray-900 overflow-hidden items-center">
+              <h3 tw="flex h-1/4">{bet.bet}</h3>
+              <div tw="flex h-3/4">{bet.betdescription}</div>
             </section>
             <section tw="flex py-2">
               <div tw="flex m-2">min</div>
@@ -68,10 +40,20 @@ class Bets extends Component {
               </span>
             </section>
           </section>
-        ))}
-      </main>
-    );
-  }
-}
+        ),
+      });
+    });
+    return arr;
+  };
+
+  return (
+    <VerticalCarousel
+      slides={BetsBuilder(props.betData)}
+      offsetRadius={offsetRadius}
+      showNavigation={showNavigation}
+      animationConfig={vcconfig}
+    />
+  );
+};
 
 export default Bets;

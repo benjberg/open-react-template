@@ -1,10 +1,11 @@
 .site-header {
-  position: absolute !important;
+  // position: absolute !important;
+  display: flex;
   top: 0;
   width: 100%;
   z-index: 10 !important;
   background: color-bg(header);
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 
   + .site-content {
     .section:first-of-type {
@@ -89,7 +90,7 @@
   .header-nav-toggle {
     display: block;
 
-    // Header navigation when the hamburger is a previous sibling
+    //  navigation when the hamburger is a previous sibling
     + .header-nav {
       flex-direction: column;
       position: absolute;
