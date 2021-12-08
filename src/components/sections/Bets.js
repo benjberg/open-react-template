@@ -14,7 +14,7 @@ const Bets = (props) => {
       arr.push({
         key: index,
         content: (
-          <section tw="flex justify-between bg-gray-800 border-2 border-gray-900 h-full w-full">
+          <section tw="flex justify-between bg-gray-800 border-2 border-gray-900 h-full">
             <img tw="w-1/4" src={bet.image} alt="Valorant logo" />
             <section tw="flex flex-col justify-between w-1/2 p-2 border-r-2 border-gray-900 overflow-hidden items-center">
               <h3 tw="flex h-1/4">{bet.bet}</h3>

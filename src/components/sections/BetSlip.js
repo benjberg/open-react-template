@@ -1,9 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import odds from "./GetData";
 
 function BetSlip() {
+  const currentgame = useSelector((state) => state.currentgame);
+  const currentteam = useSelector((state) => state.currentteam);
   return (
     <main tw="flex flex-col bg-gray-900 rounded-sm w-full">
-      <div tw="ml-5 py-2">BET SLIP</div>
+      <div>BET SLIP</div>
+      <div>{currentgame}</div>
+      <div>{odds[currentteam].id}</div>
 
       <div tw="flex justify-center border-t-2 border-b-2 border-white py-2">
         <button tw="flex justify-center w-1/2">single</button>

@@ -6,7 +6,7 @@ const BetTabs = () => {
       <ul tw="flex w-full bg-gray-800 justify-between shadow-lg h-10">
         <div
           class="tabs"
-          tw="border-r-2 border-black border-solid flex flex-grow justify-center items-center hover:bg-purple-900"
+          tw="border-r-2 border-black border-solid flex flex-grow justify-center items-center hover:bg-purple-900 bg-purple-900"
           href="#"
         >
           Bet On Yourself

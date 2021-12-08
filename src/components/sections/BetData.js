@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { BetContext } from "../contexts/BetContext";
 import { useSelector, useDispatch } from "react-redux";
 
 const BOYBets = [
@@ -138,21 +137,20 @@ const BOYyyBets = [
 ];
 
 const BetData = (props) => {
-  const { game } = useContext(BetContext);
   const currentgame = useSelector((state) => state.currentgame);
 
   const BetSelector = () => {
-    if (currentgame / 1 === 0) {
+    if (currentgame / 1 === 0 || currentgame / 1 < 0) {
       return BOYBets;
     }
     if (currentgame / 1 === 1) {
       return BOYyBets;
     }
-    if (currentgame / 1 > 1) {
+    if (currentgame / 1 === 2 || currentgame / 1 > 2) {
       return BOYyyBets;
     }
   };
 
-  return BetSelector(currentgame);
+  return BOYBets;
 };
 export default BetData;

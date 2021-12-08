@@ -16,12 +16,6 @@ const navigation = [
   { name: "Projects", icon: FolderIcon, href: "#", count: 4, current: false },
   { name: "Calendar", icon: CalendarIcon, href: "#", current: false },
   { name: "Documents", icon: InboxIcon, href: "#", current: false },
-  { name: "Reports", icon: ChartBarIcon, href: "#", count: 12, current: false },
-  { name: "Dashboard", icon: HomeIcon, href: "#", current: false },
-  { name: "Team", icon: UsersIcon, href: "#", count: 3, current: false },
-  { name: "Projects", icon: FolderIcon, href: "#", count: 4, current: false },
-  { name: "Calendar", icon: CalendarIcon, href: "#", current: false },
-  { name: "Documents", icon: InboxIcon, href: "#", current: false },
 ];
 
 function classNames(...classes) {
@@ -30,8 +24,8 @@ function classNames(...classes) {
 
 export default function SideNavBar() {
   return (
-    <main id="testing" className="fixed flex flex-col justify-center w-48">
-      <section className="flex flex-col flex-1">
+    <main className="fixed flex flex-col justify-center w-48">
+      <section className="flex flex-col flex-1 mt-32">
         <nav className="flex-1 space-y-1" aria-label="Sidebar">
           {navigation.map((item) => (
             <a
