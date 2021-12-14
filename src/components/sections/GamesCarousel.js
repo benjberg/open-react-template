@@ -13,34 +13,28 @@ const GamesCarousel = () => {
 
   const games = [
     {
-      key: 1,
+      key: 0,
       content: <img src={Fn} />,
-      name: "FN",
+    },
+    {
+      key: 1,
+      content: <img src={Val} />,
     },
     {
       key: 2,
-      content: <img src={Val} />,
-      name: "VAL",
+      content: <img src={Wz} />,
     },
     {
       key: 3,
-      content: <img src={Wz} />,
-      name: "WZ",
+      content: <img src={Fn} />,
     },
     {
       key: 4,
-      content: <img src={Fn} />,
-      name: "FN",
+      content: <img src={Val} />,
     },
     {
       key: 5,
-      content: <img src={Val} />,
-      name: "VAL",
-    },
-    {
-      key: 6,
       content: <img src={Wz} />,
-      name: "WZ",
     },
   ];
 
@@ -51,7 +45,7 @@ const GamesCarousel = () => {
         tw="bg-purple-900 focus:outline-none border-t-2 border-b-2 border-solid border-black"
         style={{ width: "5%", height: "200px" }}
         onClick={() => {
-          dispatch(prevgame(games[currentgame[0] - 1].name));
+          dispatch(prevgame());
         }}
       >
         Select
@@ -74,7 +68,7 @@ const GamesCarousel = () => {
         tw="bg-purple-900 focus:outline-none border-t-2 border-b-2 border-solid border-black"
         style={{ width: "5%", height: "200px" }}
         onClick={() => {
-          dispatch(nextgame(games[currentgame[0] + 1].name));
+          dispatch(nextgame());
         }}
       >
         select

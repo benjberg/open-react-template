@@ -13,11 +13,9 @@ const UserProfileView = () => {
         <SideNavBar />
       </div>
 
-      <div tw="flex flex-col mx-auto mt-24">
-        <Content2Xl>
-          <CarouselComp />
-          <TabsRender />
-        </Content2Xl>
+      <div tw="flex flex-col mx-auto mt-24 w-3/4">
+        <CarouselComp />
+        <TabsRender />
       </div>
     </div>
   );

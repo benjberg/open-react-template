@@ -46,7 +46,7 @@ const TeamCarousel = () => {
       <div style={{ width: "90%", height: "50px" }}>
         <Carousel
           slides={games}
-          goToSlide={currentteam}
+          goToSlide={currentteam[0]}
           offsetRadius={3}
           animationConfig={config.slow}
         />

@@ -9,7 +9,7 @@ const BetTabs = () => {
           tw="border-r-2 border-black border-solid flex flex-grow justify-center items-center hover:bg-purple-900 bg-purple-900"
           href="#"
         >
-          Bet On Yourself
+          Wager On Yourself
         </div>
         <div
           class="tabs"

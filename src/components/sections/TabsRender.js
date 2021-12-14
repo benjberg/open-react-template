@@ -9,10 +9,12 @@ import { useSelector } from "react-redux";
 import ValorantVerify from "./ValorantVerify";
 import WarzoneVerify from "./WarzoneVerify";
 import FortniteVerify from "./FortniteVerify";
+import { GetBetData } from "../../utils/hooks/getBetData";
 
 const TabsRender = () => {
   const currentgame = useSelector((state) => state.currentgame);
   const [verifyData, setVerifyData] = useState([]);
+  const [data] = GetBetData();
 
   useEffect(() => {
     const id = localStorage.getItem("id");
@@ -30,20 +32,9 @@ const TabsRender = () => {
       });
   }, []);
 
-  useEffect(() => {
-    axiosWithAuth()
-      .get("/games/boy/FN_bets")
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((err) => {
-        console.log("error getting appliance list", err);
-      });
-  }, []);
-
   const gameCompSelector = (currentgamename) => {
     if (currentgamename === "FN") {
-      return <FortniteVerify verify={verifyData[0]} />;
+      return <FortniteVerify verify={verifyData[0]} betsarray={data} />;
     }
     if (currentgamename === "WZ") {
       return <WarzoneVerify verify={verifyData[1]} />;

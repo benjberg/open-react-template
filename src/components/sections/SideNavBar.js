@@ -11,11 +11,11 @@ import {
 } from "@heroicons/react/outline";
 
 const navigation = [
-  { name: "Dashboard", icon: HomeIcon, href: "#", current: true },
-  { name: "Team", icon: UsersIcon, href: "#", count: 3, current: false },
-  { name: "Projects", icon: FolderIcon, href: "#", count: 4, current: false },
-  { name: "Calendar", icon: CalendarIcon, href: "#", current: false },
-  { name: "Documents", icon: InboxIcon, href: "#", current: false },
+  { name: "About US", icon: HomeIcon, href: "#", current: true },
+  { name: "Contact Us", icon: UsersIcon, href: "#", count: 3, current: false },
+  { name: "Services", icon: CalendarIcon, href: "#", current: false },
+  { name: "Settings", icon: InboxIcon, href: "#", current: false },
+  { name: "Blog", icon: FolderIcon, href: "#", count: 4, current: false },
 ];
 
 function classNames(...classes) {

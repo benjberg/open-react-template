@@ -1,13 +1,11 @@
-export const nextgame = (name) => {
+export const nextgame = () => {
   return {
     type: "NEXTGAME",
-    name: name,
   };
 };
 
-export const prevgame = (name) => {
+export const prevgame = () => {
   return {
     type: "PREVGAME",
-    name: name,
   };
 };

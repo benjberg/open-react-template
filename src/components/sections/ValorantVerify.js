@@ -4,12 +4,13 @@ import BetData from "./BetData";
 import VerifyUsername from "./VerifyUsername";
 
 export default function ValorantVerify(props) {
-  const VerifySelector = (verified) => {
+  const VerifySelector = (verified, bets) => {
     if (verified === true) {
+      console.log("hello");
       return <Bets betData={BetData()} />;
     } else {
       return <VerifyUsername />;
     }
   };
-  return VerifySelector(props.verify);
+  return VerifySelector(props.verify, props.betsarray);
 }

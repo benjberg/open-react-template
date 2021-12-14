@@ -4,12 +4,12 @@ import BetData from "./BetData";
 import VerifyUsername from "./VerifyUsername";
 
 export default function FortniteVerify(props) {
-  const VerifySelector = (verified) => {
+  const VerifySelector = (verified, bets) => {
     if (verified === true) {
-      return <Bets betData={BetData()} />;
+      return <Bets betData={BetData(bets)} />;
     } else {
       return <VerifyUsername />;
     }
   };
-  return VerifySelector(props.verify);
+  return VerifySelector(props.verify, props.betsarray);
 }
