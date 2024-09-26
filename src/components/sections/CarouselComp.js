@@ -1,68 +1,63 @@
-import React from 'react';
-import { Carousel } from 'react-carousel-minimal';
-import tw from 'twin.macro'
+import React from "react";
+import { Carousel } from "react-carousel-minimal";
+import tw from "twin.macro";
 
 const Container = tw.div`
-mt-16 max-w-contain mx-auto
-`
+flex w-full
+`;
 function CarouselComp() {
- const data = [
-   
-   
+  const data = [
     {
-      image: "https://images.unsplash.com/photo-1552872673-9b7b99711ebb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80",
-      caption: "Thing one"
+      image:
+        "https://t4.ftcdn.net/jpg/04/09/70/87/360_F_409708782_HxuxOH8f7xSmj5p4ygbAbuJE74vGGj2N.jpg",
+      caption: "Thing one",
     },
     {
-      image: "https://images.unsplash.com/photo-1552872673-9b7b99711ebb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80",
-      caption: "Something dank"
+      image:
+        "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80",
+      caption: "Something dank",
     },
     {
-      image: "https://images.unsplash.com/photo-1552872673-9b7b99711ebb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80",
-      caption: " $₱€₦₯ ₥o₦€¥ "
-    }
+      image:
+        "https://cdn.vox-cdn.com/thumbor/ADYxDCTUKewcGxhYGZ_XMUh4uzQ=/0x0:2040x1360/1200x675/filters:focal(857x517:1183x843)/cdn.vox-cdn.com/uploads/chorus_image/image/64035800/acastro_190618_1777_cloud_gaming_0003.0.jpg",
+      caption: " $₱€₦₯ ₥o₦€¥ ",
+    },
   ];
 
   const captionStyle = {
-    fontSize: '2em',
-    fontWeight: 'bold',
-  }
+    fontSize: "2em",
+    fontWeight: "bold",
+  };
   const slideNumberStyle = {
-    fontSize: '20px',
-    fontWeight: 'bold',
-  }
+    fontSize: "20px",
+    fontWeight: "bold",
+  };
   return (
-    <Container >
-      <div style={{ textAlign: "center" }}>
-        <div>
-          <Carousel
-            data={data}
-            time={5000}
-            width="1200px"
-            height="500px"
-            captionStyle={captionStyle}
-            radius="5px"
-            slideNumber={false}
-            slideNumberStyle={slideNumberStyle}
-            captionPosition="center"
-            automatic={false}
-            dots={true}
-            pauseIconColor="white"
-            pauseIconSize="40px"
-            slideBackgroundColor="darkgrey"
-            slideImageFit="cover"
-            thumbnails={false}
-            thumbnailWidth="100px"
-            style={{
-              textAlign: "center",
-              maxWidth: "1200px",
-              maxHeight: "500px",
-              margin: "40px auto",
-            }}
-          />
-        </div>
+    <div style={{ textAlign: "center" }} className="shadow">
+      <div>
+        <Carousel
+          data={data}
+          time={10000}
+          width="100%"
+          height="500px"
+          captionStyle={captionStyle}
+          slideNumber={false}
+          slideNumberStyle={slideNumberStyle}
+          captionPosition="center"
+          automatic={false}
+          dots={false}
+          pauseIconColor="purple"
+          pauseIconSize="40px"
+          slideBackgroundColor="black"
+          slideImageFit="cover"
+          thumbnails={false}
+          thumbnailWidth="100px"
+          style={{
+            textAlign: "center",
+          }}
+        />
       </div>
-    </Container>
+    </div>
   );
 }
 
